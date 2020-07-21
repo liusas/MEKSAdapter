@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8238B7BF2587C6202B80F8B1DE2F20AD /* MEKSAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06DE826BF7BE2FA98650C5AC886BB80C /* MEKSAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D68F6B7289D061992F33A79362E30FAB /* MEKSAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B01B21096737681FF03E003079363 /* MEKSAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F6A1A13F53C04E42CC320065BB321923 /* MEKSAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7CCA6F2FCEE0E6A75BF74E9282EAA8 /* MEKSAdapter-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82F4940CF11772CB6E6A54A3D8DA288C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
+			remoteInfo = KSAdSDK;
+		};
+		A51664EC21D6D40500DE8858895D5675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
+			remoteInfo = MEAdvSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06DE826BF7BE2FA98650C5AC886BB80C /* MEKSAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEKSAdapter.h; path = MEKSAdapter/Classes/MEKSAdapter.h; sourceTree = "<group>"; };
+		53FF4169D5938721020F55DEC4B5CF4A /* libMEKSAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMEKSAdapter.a; path = libMEKSAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
+		5A3B01B21096737681FF03E003079363 /* MEKSAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEKSAdapter.m; path = MEKSAdapter/Classes/MEKSAdapter.m; sourceTree = "<group>"; };
+		A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEKSAdapter.xcconfig; sourceTree = "<group>"; };
+		A5FD76014C44C9AE733EB97300C5581B /* MEKSAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEKSAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8ECC69FECE478DEF753551A9CFE33B7 /* MEKSAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEKSAdapter-prefix.pch"; sourceTree = "<group>"; };
+		ABD86CCD4C4B4B83FC8B3ED966EC4911 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		AF7CCA6F2FCEE0E6A75BF74E9282EAA8 /* MEKSAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEKSAdapter-dummy.m"; sourceTree = "<group>"; };
+		D53770FA8DEECEECF21E757D6FDA04AB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10A579D65A0EB75ACDFB36845AEB57A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05EEE26C5180ACA6801544C5B2539D92 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK */,
+				FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		41B172A645EF1405713CEAEA2EEDDEF6 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D53770FA8DEECEECF21E757D6FDA04AB /* LICENSE */,
+				A5FD76014C44C9AE733EB97300C5581B /* MEKSAdapter.podspec */,
+				ABD86CCD4C4B4B83FC8B3ED966EC4911 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7E5C23D40B937711BF339C9637D03B7D /* MEKSAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				06DE826BF7BE2FA98650C5AC886BB80C /* MEKSAdapter.h */,
+				5A3B01B21096737681FF03E003079363 /* MEKSAdapter.m */,
+				41B172A645EF1405713CEAEA2EEDDEF6 /* Pod */,
+				D0AEE7151C689FC1C1BFEE7D39D3D2E8 /* Support Files */,
+			);
+			name = MEKSAdapter;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		AD861C0714CE652088A29656D5DFC3BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53FF4169D5938721020F55DEC4B5CF4A /* libMEKSAdapter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8746167574FEC584BA491DB167944F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0AEE7151C689FC1C1BFEE7D39D3D2E8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */,
+				AF7CCA6F2FCEE0E6A75BF74E9282EAA8 /* MEKSAdapter-dummy.m */,
+				A8ECC69FECE478DEF753551A9CFE33B7 /* MEKSAdapter-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MEKSAdapter";
+			sourceTree = "<group>";
+		};
+		FCA71BD703D2D5EFBDBC81B7A8655F74 = {
+			isa = PBXGroup;
+			children = (
+				05EEE26C5180ACA6801544C5B2539D92 /* Dependencies */,
+				C8746167574FEC584BA491DB167944F5 /* Frameworks */,
+				7E5C23D40B937711BF339C9637D03B7D /* MEKSAdapter */,
+				AD861C0714CE652088A29656D5DFC3BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A5298CB65017C11F41BD0D3F5863ACAF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8238B7BF2587C6202B80F8B1DE2F20AD /* MEKSAdapter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F6997BAF55C22AFCC4F7CDFB82C038AF /* MEKSAdapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB0DC670C9AD626E64B45205D345869F /* Build configuration list for PBXNativeTarget "MEKSAdapter" */;
+			buildPhases = (
+				A5298CB65017C11F41BD0D3F5863ACAF /* Headers */,
+				C4B4A9CF69C4ED692A3E1BD423493E86 /* Sources */,
+				10A579D65A0EB75ACDFB36845AEB57A3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB2905EC4F74FCC7DEDB88A7D3E691C4 /* PBXTargetDependency */,
+				8BE85B3A8623F9F816B8342033197DBC /* PBXTargetDependency */,
+			);
+			name = MEKSAdapter;
+			productName = MEKSAdapter;
+			productReference = 53FF4169D5938721020F55DEC4B5CF4A /* libMEKSAdapter.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD1B0049286D44AE4C47E6A6384D4156 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 710BE04F528E3B431BDAAEC43B85F231 /* Build configuration list for PBXProject "MEKSAdapter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCA71BD703D2D5EFBDBC81B7A8655F74;
+			productRefGroup = AD861C0714CE652088A29656D5DFC3BF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK */;
+				},
+				{
+					ProjectRef = FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F6997BAF55C22AFCC4F7CDFB82C038AF /* MEKSAdapter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4B4A9CF69C4ED692A3E1BD423493E86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A1A13F53C04E42CC320065BB321923 /* MEKSAdapter-dummy.m in Sources */,
+				D68F6B7289D061992F33A79362E30FAB /* MEKSAdapter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BE85B3A8623F9F816B8342033197DBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEAdvSDK;
+			targetProxy = A51664EC21D6D40500DE8858895D5675 /* PBXContainerItemProxy */;
+		};
+		DB2905EC4F74FCC7DEDB88A7D3E691C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KSAdSDK;
+			targetProxy = 82F4940CF11772CB6E6A54A3D8DA288C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		361C021BA523CCD11EC2EE2E2FFE4BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5F65229E5C68B02E2A66AC095C11CC10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E6FDABC679FC11F442C29407CF0FD552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MEKSAdapter/MEKSAdapter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MEKSAdapter;
+				PRODUCT_NAME = MEKSAdapter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F43D1B9A8872699B6DCD4B543E3416CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MEKSAdapter/MEKSAdapter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MEKSAdapter;
+				PRODUCT_NAME = MEKSAdapter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		710BE04F528E3B431BDAAEC43B85F231 /* Build configuration list for PBXProject "MEKSAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				361C021BA523CCD11EC2EE2E2FFE4BAC /* Debug */,
+				5F65229E5C68B02E2A66AC095C11CC10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB0DC670C9AD626E64B45205D345869F /* Build configuration list for PBXNativeTarget "MEKSAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6FDABC679FC11F442C29407CF0FD552 /* Debug */,
+				F43D1B9A8872699B6DCD4B543E3416CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD1B0049286D44AE4C47E6A6384D4156 /* Project object */;
+}

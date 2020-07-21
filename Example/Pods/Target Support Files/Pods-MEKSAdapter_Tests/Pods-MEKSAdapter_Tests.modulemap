@@ -1,0 +1,6 @@
+framework module Pods_MEKSAdapter_Tests {
+  umbrella header "Pods-MEKSAdapter_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
