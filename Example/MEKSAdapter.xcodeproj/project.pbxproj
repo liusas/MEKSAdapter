@@ -303,12 +303,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MEKSAdapter_Example/Pods-MEKSAdapter_Example-resources.sh",
 				"${PODS_ROOT}/KSAdSDK/KSAdSDK.bundle",
-				"${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MEAdvBundle.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KSAdSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MEAdvBundle.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

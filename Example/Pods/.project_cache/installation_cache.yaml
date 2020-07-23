@@ -9,17 +9,10 @@ CACHE_KEYS:
     PROJECT_NAME: KSAdSDK
     SPECS:
       - KSAdSDK (2.6.1)
-  MEAdvSDK:
-    BUILD_SETTINGS_CHECKSUM:
-      MEAdvSDK: 8747ad686f58fa12abc9af4b0fa8ffe3
-    CHECKSUM: 861be5b363fa1fc4471709bfe26375daa55b5bb2
-    PROJECT_NAME: MEAdvSDK
-    SPECS:
-      - MEAdvSDK (0.1.4)
   MEKSAdapter:
     BUILD_SETTINGS_CHECKSUM:
-      MEKSAdapter: 9078635049707fcde39311d397f14b5a
-    CHECKSUM: ed655e1997767b34212830080a8d15970d9a8e58
+      MEKSAdapter: 9dbd229033291b4f2730b9e6c5c84bcc
+    CHECKSUM: 8af02735faacb43424d821ef4da420ec60bc5182
     FILES:
       - "../../LICENSE"
       - "../../MEKSAdapter/Classes/MEKSAdapter.h"
@@ -30,25 +23,10 @@ CACHE_KEYS:
       - MEKSAdapter (0.1.0)
   Pods-MEKSAdapter_Example:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: db5721ddaccc0a25fc892f8b70267025
-      Release: db5721ddaccc0a25fc892f8b70267025
+      Debug: 0c82385a600dafd231c1ddc8137947a3
+      Release: 0c82385a600dafd231c1ddc8137947a3
   Pods-MEKSAdapter_Tests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: ec45c2ffe01018e967dd7044ed5bdafa
-      Release: ec45c2ffe01018e967dd7044ed5bdafa
-  Reachability:
-    BUILD_SETTINGS_CHECKSUM:
-      Reachability: 6fb325cbaedfe731700153966683b754
-    CHECKSUM: 33e18b67625424e47b6cde6d202dce689ad7af96
-    PROJECT_NAME: Reachability
-    SPECS:
-      - Reachability (3.2)
-  Realm:
-    BUILD_SETTINGS_CHECKSUM:
-      Realm: ced923823a7c6868fd8d917664a2abaa
-    CHECKSUM: 4eb04d7487bd43c0581256f40b424eafb711deff
-    PROJECT_NAME: Realm
-    SPECS:
-      - Realm (4.4.1)
-      - Realm/Headers (4.4.1)
+      Debug: 0f9000f372f4c08af24b1f6aeaac0855
+      Release: 0f9000f372f4c08af24b1f6aeaac0855
 OBJECT_VERSION: 46

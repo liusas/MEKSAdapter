@@ -7,31 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		817C544737A4D67FA4BC2DCFB23A137F /* Pods-MEKSAdapter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CADBF60C079939D6850BEF0A11BE0 /* Pods-MEKSAdapter_Example-dummy.m */; };
 		90DD4A0C24B96815402E442C6287808B /* Pods-MEKSAdapter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D936DCD9491FA3694987992A0A32BD /* Pods-MEKSAdapter_Tests-dummy.m */; };
-		C7FB07637BEB3C72F829397A3790E049 /* Pods-MEKSAdapter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CADBF60C079939D6850BEF0A11BE0 /* Pods-MEKSAdapter_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27D2162197BBA6AFC2396B0223F2D245 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8FC7AB33976980469C91D7E7DF23E00F /* Realm.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC4AC9FBD7453D9D72102559C8F6B8AC;
-			remoteInfo = Realm;
-		};
-		32D261EDB9349B0AAEFFF02A3842D9A2 /* PBXContainerItemProxy */ = {
+		0B8775A4EE3894F5E3498C2C7979A041 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0FF6B74271FDCDBC6873E667DB6B9091 /* MEKSAdapter.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F6997BAF55C22AFCC4F7CDFB82C038AF;
 			remoteInfo = MEKSAdapter;
 		};
-		3833C69DD1B0410EDFE83ACA7E51FFD3 /* PBXContainerItemProxy */ = {
+		8B79FE5E991A865C812C96CE1A0B7738 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK.xcodeproj */;
+			containerPortal = 00727D49E9CF2D0A54FBC31F862A575A /* KSAdSDK.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
-			remoteInfo = MEAdvSDK;
+			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
+			remoteInfo = KSAdSDK;
 		};
 		8D30359956A748C44250CBC50B8A7045 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -40,37 +33,20 @@
 			remoteGlobalIDString = 89BB5CC50D993C64B2A587BE6B86EAD1;
 			remoteInfo = "Pods-MEKSAdapter_Example";
 		};
-		9AB5021D6F8ACD6D6A8EBE08AEDFD04B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DA1EBD7850A215E94DBD19A247725F9F;
-			remoteInfo = Reachability;
-		};
-		B72903BFDD6F9115DA8C71B2C62F66CD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
-			remoteInfo = KSAdSDK;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00727D49E9CF2D0A54FBC31F862A575A /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
 		03E470AD5C1B5ADC52F8A2A48EC798D8 /* Pods-MEKSAdapter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEKSAdapter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0FF6B74271FDCDBC6873E667DB6B9091 /* MEKSAdapter */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEKSAdapter; path = MEKSAdapter.xcodeproj; sourceTree = "<group>"; };
 		2523F84F3711EFAE8738AAEDB71B1776 /* Pods-MEKSAdapter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEKSAdapter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		27A927267BFDAE747E15F9A359DB78FC /* Pods-MEKSAdapter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MEKSAdapter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		2A6CADBF60C079939D6850BEF0A11BE0 /* Pods-MEKSAdapter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MEKSAdapter_Example-dummy.m"; sourceTree = "<group>"; };
-		2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Reachability; path = Reachability.xcodeproj; sourceTree = "<group>"; };
-		5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
 		693706C840A464B985A6FCC6E88AE0BF /* Pods-MEKSAdapter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MEKSAdapter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		75BD4B1B73530EAE73A25854B048B73F /* Pods-MEKSAdapter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEKSAdapter_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
 		823B6A4688A0EBDD533FDBC00B9D1D19 /* Pods-MEKSAdapter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MEKSAdapter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		85D2C1CA7AAA13A2E9133D2E1FC55F40 /* Pods-MEKSAdapter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEKSAdapter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		86D936DCD9491FA3694987992A0A32BD /* Pods-MEKSAdapter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MEKSAdapter_Tests-dummy.m"; sourceTree = "<group>"; };
-		8FC7AB33976980469C91D7E7DF23E00F /* Realm */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Realm; path = Realm.xcodeproj; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9418CB141A430BFA9F3A4BD44BF3343 /* libPods-MEKSAdapter_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MEKSAdapter_Example.a"; path = "libPods-MEKSAdapter_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BCADEDC32AAA6102BE3AF14422BD1C /* libPods-MEKSAdapter_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MEKSAdapter_Tests.a"; path = "libPods-MEKSAdapter_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,14 +55,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4D0A9B4D948B70CF86F59D23664C97E4 /* Frameworks */ = {
+		40E50355BC36CF7DAC05DB09A9EC29E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68FE17425ED8DAF11C4ED5B7CF5678CD /* Frameworks */ = {
+		4D0A9B4D948B70CF86F59D23664C97E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -140,17 +116,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88476506D3F38B69C78A7B975C4D748F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK */,
-				5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK */,
-				2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability */,
-				8FC7AB33976980469C91D7E7DF23E00F /* Realm */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C0E02C36ABA358A36E4E0C72FF6E58D6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +131,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				5223B9A600A84D4E6FE8F03ED873587F /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				88476506D3F38B69C78A7B975C4D748F /* Pods */,
+				E73EAC9ED2470A27E1529B5EE9B50670 /* Pods */,
 				5A25DA39EC0F2DF17EC14991D6E73F06 /* Products */,
 				C0E02C36ABA358A36E4E0C72FF6E58D6 /* Targets Support Files */,
 			);
@@ -179,10 +144,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E73EAC9ED2470A27E1529B5EE9B50670 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00727D49E9CF2D0A54FBC31F862A575A /* KSAdSDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8C66B243A15BDBAC813AB3C32DB1794A /* Headers */ = {
+		2BA87244E6043EB39935693DB6F7A894 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,20 +192,17 @@
 		};
 		89BB5CC50D993C64B2A587BE6B86EAD1 /* Pods-MEKSAdapter_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58DA44A470B34A0EA8382D6C90CFB462 /* Build configuration list for PBXNativeTarget "Pods-MEKSAdapter_Example" */;
+			buildConfigurationList = C671F462D9F7F312BB34E5165445370D /* Build configuration list for PBXNativeTarget "Pods-MEKSAdapter_Example" */;
 			buildPhases = (
-				8C66B243A15BDBAC813AB3C32DB1794A /* Headers */,
-				96E2AD484E0EFC77F248A2BF743A1722 /* Sources */,
-				68FE17425ED8DAF11C4ED5B7CF5678CD /* Frameworks */,
+				2BA87244E6043EB39935693DB6F7A894 /* Headers */,
+				02C15C4400C82DA66684229453C998C4 /* Sources */,
+				40E50355BC36CF7DAC05DB09A9EC29E7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D910873CFC2B26D93FDFC09427E00F1C /* PBXTargetDependency */,
-				98BE31E6E6DBCFB96486F427CDDE3927 /* PBXTargetDependency */,
-				E8C23B3D0F45A3EDC644B0A124B1254D /* PBXTargetDependency */,
-				08FAF84800795282EC015081E60C6996 /* PBXTargetDependency */,
-				A601EC6FEDBFE188F2D3AC12AD7BA5A2 /* PBXTargetDependency */,
+				273BFDD346E9138540E24AA9DE8B21AA /* PBXTargetDependency */,
+				8A60295E3FEDD704FA61690845FF9146 /* PBXTargetDependency */,
 			);
 			name = "Pods-MEKSAdapter_Example";
 			productName = "Pods-MEKSAdapter_Example";
@@ -261,19 +231,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK */;
-				},
-				{
-					ProjectRef = 2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability */;
-				},
-				{
-					ProjectRef = 8FC7AB33976980469C91D7E7DF23E00F /* Realm */;
-				},
-				{
 					ProjectRef = 0FF6B74271FDCDBC6873E667DB6B9091 /* MEKSAdapter */;
 				},
 				{
-					ProjectRef = 7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK */;
+					ProjectRef = 00727D49E9CF2D0A54FBC31F862A575A /* KSAdSDK */;
 				},
 			);
 			projectRoot = "";
@@ -285,6 +246,14 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		02C15C4400C82DA66684229453C998C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				817C544737A4D67FA4BC2DCFB23A137F /* Pods-MEKSAdapter_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DA64E37E8E8DF190EFD34F95C338EE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,21 +262,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96E2AD484E0EFC77F248A2BF743A1722 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7FB07637BEB3C72F829397A3790E049 /* Pods-MEKSAdapter_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		08FAF84800795282EC015081E60C6996 /* PBXTargetDependency */ = {
+		273BFDD346E9138540E24AA9DE8B21AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Reachability;
-			targetProxy = 9AB5021D6F8ACD6D6A8EBE08AEDFD04B /* PBXContainerItemProxy */;
+			name = KSAdSDK;
+			targetProxy = 8B79FE5E991A865C812C96CE1A0B7738 /* PBXContainerItemProxy */;
 		};
 		425F02FBCF0A3097BAD9813DFD3F10C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -315,25 +276,10 @@
 			target = 89BB5CC50D993C64B2A587BE6B86EAD1 /* Pods-MEKSAdapter_Example */;
 			targetProxy = 8D30359956A748C44250CBC50B8A7045 /* PBXContainerItemProxy */;
 		};
-		98BE31E6E6DBCFB96486F427CDDE3927 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MEAdvSDK;
-			targetProxy = 3833C69DD1B0410EDFE83ACA7E51FFD3 /* PBXContainerItemProxy */;
-		};
-		A601EC6FEDBFE188F2D3AC12AD7BA5A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Realm;
-			targetProxy = 27D2162197BBA6AFC2396B0223F2D245 /* PBXContainerItemProxy */;
-		};
-		D910873CFC2B26D93FDFC09427E00F1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KSAdSDK;
-			targetProxy = B72903BFDD6F9115DA8C71B2C62F66CD /* PBXContainerItemProxy */;
-		};
-		E8C23B3D0F45A3EDC644B0A124B1254D /* PBXTargetDependency */ = {
+		8A60295E3FEDD704FA61690845FF9146 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEKSAdapter;
-			targetProxy = 32D261EDB9349B0AAEFFF02A3842D9A2 /* PBXContainerItemProxy */;
+			targetProxy = 0B8775A4EE3894F5E3498C2C7979A041 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -402,7 +348,7 @@
 			};
 			name = Debug;
 		};
-		4FDE7E4353E8617443F8B5DF1EDAE5BB /* Debug */ = {
+		55C0D47295CEBB3906872FD923503DC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03E470AD5C1B5ADC52F8A2A48EC798D8 /* Pods-MEKSAdapter_Example.debug.xcconfig */;
 			buildSettings = {
@@ -423,29 +369,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		AF9529D09CE2DFB3C7CC38CA55757413 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75BD4B1B73530EAE73A25854B048B73F /* Pods-MEKSAdapter_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -504,6 +427,29 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BC593088FEB9E43DDDE39FDC043B7DD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75BD4B1B73530EAE73A25854B048B73F /* Pods-MEKSAdapter_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -573,11 +519,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58DA44A470B34A0EA8382D6C90CFB462 /* Build configuration list for PBXNativeTarget "Pods-MEKSAdapter_Example" */ = {
+		C671F462D9F7F312BB34E5165445370D /* Build configuration list for PBXNativeTarget "Pods-MEKSAdapter_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4FDE7E4353E8617443F8B5DF1EDAE5BB /* Debug */,
-				AF9529D09CE2DFB3C7CC38CA55757413 /* Release */,
+				55C0D47295CEBB3906872FD923503DC7 /* Debug */,
+				BC593088FEB9E43DDDE39FDC043B7DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

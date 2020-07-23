@@ -1,15 +1,7 @@
 PODS:
   - KSAdSDK (2.6.1)
-  - MEAdvSDK (0.1.4):
-    - Reachability
-    - Realm (= 4.4.1)
   - MEKSAdapter (0.1.0):
     - KSAdSDK (= 2.6.1)
-    - MEAdvSDK (= 0.1.4)
-  - Reachability (3.2)
-  - Realm (4.4.1):
-    - Realm/Headers (= 4.4.1)
-  - Realm/Headers (4.4.1)
 
 DEPENDENCIES:
   - MEKSAdapter (from `../`)
@@ -17,10 +9,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - KSAdSDK
-    - Reachability
-    - Realm
-  https://gitlab.ad-mex.com/app/Module_iOS.git:
-    - MEAdvSDK
 
 EXTERNAL SOURCES:
   MEKSAdapter:
@@ -28,11 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KSAdSDK: be75d60f395888e1e0ae60d351168c6078c4845f
-  MEAdvSDK: 861be5b363fa1fc4471709bfe26375daa55b5bb2
-  MEKSAdapter: ed655e1997767b34212830080a8d15970d9a8e58
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  MEKSAdapter: 8af02735faacb43424d821ef4da420ec60bc5182
 
-PODFILE CHECKSUM: cc9ee915dd603161a265d807dc20383066957ed3
+PODFILE CHECKSUM: aa298350525e74e6786525c95f046d725e8ba17f
 
 COCOAPODS: 1.8.4
