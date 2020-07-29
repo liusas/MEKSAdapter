@@ -7,36 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE32488824BAF5DC7CBB7B80EA5514C8 /* MEKSAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B01B21096737681FF03E003079363 /* MEKSAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CD96DB6324A8A2EF43642CAA17DA2F66 /* MEKSAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 06DE826BF7BE2FA98650C5AC886BB80C /* MEKSAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D69B562DB597FA1067DCF76C79B05BE5 /* MEKSAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7CCA6F2FCEE0E6A75BF74E9282EAA8 /* MEKSAdapter-dummy.m */; };
+		DD60499494AF6FF8F5E68418C3B9344B /* MEKSAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 629A7BF03E24FF036B1BB62E7FB2B0B8 /* MEKSAdapter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E874F72C1D82D3548F5219EE55694DDB /* MEKSAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FE29DE64267E03481C4385459EEF8E /* MEKSAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FD552D4CA886C65A4304F07C904B94D8 /* MEKSAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E73C6A095905B35B0914AFB50ED3938 /* MEKSAdapter-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4C74CABBA20F8A999DDE80A63F88ADB6 /* PBXContainerItemProxy */ = {
+		0AEF73F0D9CF6F490FDCDE7BCD8CBBD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6EB15CD3B8BD8AC0EEF8272CF71F263F /* KSAdSDK.xcodeproj */;
+			containerPortal = 554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
 			remoteInfo = KSAdSDK;
 		};
+		27ADB79F74A05543168687C4AE43B1EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
+			remoteInfo = MEAdvSDK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06DE826BF7BE2FA98650C5AC886BB80C /* MEKSAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEKSAdapter.h; path = MEKSAdapter/Classes/MEKSAdapter.h; sourceTree = "<group>"; };
+		192DD52F35410AFB956B015E6E589987 /* MEKSAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEKSAdapter-prefix.pch"; sourceTree = "<group>"; };
+		1AEE75C71B70AE642A0061D4692CABE7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		22FE29DE64267E03481C4385459EEF8E /* MEKSAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEKSAdapter.m; path = MEKSAdapter/Classes/MEKSAdapter.m; sourceTree = "<group>"; };
+		4A8484C195C7B387471EA750E1F929D6 /* MEKSAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEKSAdapter.debug.xcconfig; sourceTree = "<group>"; };
+		4E73C6A095905B35B0914AFB50ED3938 /* MEKSAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEKSAdapter-dummy.m"; sourceTree = "<group>"; };
 		53FF4169D5938721020F55DEC4B5CF4A /* libMEKSAdapter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMEKSAdapter.a; path = libMEKSAdapter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A3B01B21096737681FF03E003079363 /* MEKSAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEKSAdapter.m; path = MEKSAdapter/Classes/MEKSAdapter.m; sourceTree = "<group>"; };
-		6EB15CD3B8BD8AC0EEF8272CF71F263F /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
-		A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEKSAdapter.xcconfig; sourceTree = "<group>"; };
-		A5FD76014C44C9AE733EB97300C5581B /* MEKSAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEKSAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A8ECC69FECE478DEF753551A9CFE33B7 /* MEKSAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MEKSAdapter-prefix.pch"; sourceTree = "<group>"; };
-		ABD86CCD4C4B4B83FC8B3ED966EC4911 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		AF7CCA6F2FCEE0E6A75BF74E9282EAA8 /* MEKSAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MEKSAdapter-dummy.m"; sourceTree = "<group>"; };
-		D53770FA8DEECEECF21E757D6FDA04AB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
+		60FAABB5D774822FE60FD31F38868312 /* MEKSAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MEKSAdapter.release.xcconfig; sourceTree = "<group>"; };
+		629A7BF03E24FF036B1BB62E7FB2B0B8 /* MEKSAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEKSAdapter.h; path = MEKSAdapter/Classes/MEKSAdapter.h; sourceTree = "<group>"; };
+		9DE4373D9D6272E8494F9E80A3466FBA /* MEKSAdapter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MEKSAdapter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C84D0146DFE4A34FB234C401B91F23E6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		425DBB05C3596F243131E25AAFBC7960 /* Frameworks */ = {
+		B6FBBC3EAAA5589EDD2E5FE14B01B4ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,26 +55,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		41B172A645EF1405713CEAEA2EEDDEF6 /* Pod */ = {
+		05EEE26C5180ACA6801544C5B2539D92 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				D53770FA8DEECEECF21E757D6FDA04AB /* LICENSE */,
-				A5FD76014C44C9AE733EB97300C5581B /* MEKSAdapter.podspec */,
-				ABD86CCD4C4B4B83FC8B3ED966EC4911 /* README.md */,
+				554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK */,
+				FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		15A1A13E5F9D2485AA7F014903702209 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				1AEE75C71B70AE642A0061D4692CABE7 /* LICENSE */,
+				9DE4373D9D6272E8494F9E80A3466FBA /* MEKSAdapter.podspec */,
+				C84D0146DFE4A34FB234C401B91F23E6 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		7E5C23D40B937711BF339C9637D03B7D /* MEKSAdapter */ = {
+		2668E5ED437CDF98D3DD502554B9616B /* MEKSAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				06DE826BF7BE2FA98650C5AC886BB80C /* MEKSAdapter.h */,
-				5A3B01B21096737681FF03E003079363 /* MEKSAdapter.m */,
-				41B172A645EF1405713CEAEA2EEDDEF6 /* Pod */,
-				D0AEE7151C689FC1C1BFEE7D39D3D2E8 /* Support Files */,
+				629A7BF03E24FF036B1BB62E7FB2B0B8 /* MEKSAdapter.h */,
+				22FE29DE64267E03481C4385459EEF8E /* MEKSAdapter.m */,
+				15A1A13E5F9D2485AA7F014903702209 /* Pod */,
+				AD69B643C0CA0F77F8566EF0FD288E15 /* Support Files */,
 			);
 			name = MEKSAdapter;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		AD69B643C0CA0F77F8566EF0FD288E15 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E73C6A095905B35B0914AFB50ED3938 /* MEKSAdapter-dummy.m */,
+				192DD52F35410AFB956B015E6E589987 /* MEKSAdapter-prefix.pch */,
+				4A8484C195C7B387471EA750E1F929D6 /* MEKSAdapter.debug.xcconfig */,
+				60FAABB5D774822FE60FD31F38868312 /* MEKSAdapter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MEKSAdapter";
 			sourceTree = "<group>";
 		};
 		AD861C0714CE652088A29656D5DFC3BF /* Products */ = {
@@ -83,31 +113,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D0AEE7151C689FC1C1BFEE7D39D3D2E8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */,
-				AF7CCA6F2FCEE0E6A75BF74E9282EAA8 /* MEKSAdapter-dummy.m */,
-				A8ECC69FECE478DEF753551A9CFE33B7 /* MEKSAdapter-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MEKSAdapter";
-			sourceTree = "<group>";
-		};
-		EAEDE28E78CB3A441E6CC5E0804BB5A7 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				6EB15CD3B8BD8AC0EEF8272CF71F263F /* KSAdSDK */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
 		FCA71BD703D2D5EFBDBC81B7A8655F74 = {
 			isa = PBXGroup;
 			children = (
-				EAEDE28E78CB3A441E6CC5E0804BB5A7 /* Dependencies */,
+				05EEE26C5180ACA6801544C5B2539D92 /* Dependencies */,
 				C8746167574FEC584BA491DB167944F5 /* Frameworks */,
-				7E5C23D40B937711BF339C9637D03B7D /* MEKSAdapter */,
+				2668E5ED437CDF98D3DD502554B9616B /* MEKSAdapter */,
 				AD861C0714CE652088A29656D5DFC3BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,11 +126,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A77C9403132A8CF77984D52FA3F2F05F /* Headers */ = {
+		3A8BFAB28033699BC879D05C2875F8B6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD96DB6324A8A2EF43642CAA17DA2F66 /* MEKSAdapter.h in Headers */,
+				DD60499494AF6FF8F5E68418C3B9344B /* MEKSAdapter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,16 +139,17 @@
 /* Begin PBXNativeTarget section */
 		F6997BAF55C22AFCC4F7CDFB82C038AF /* MEKSAdapter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DDFEBE734289D55C0DC9306A5BE4A6D /* Build configuration list for PBXNativeTarget "MEKSAdapter" */;
+			buildConfigurationList = DE37DEBA9325E68B5E59F6DCA64EECE7 /* Build configuration list for PBXNativeTarget "MEKSAdapter" */;
 			buildPhases = (
-				A77C9403132A8CF77984D52FA3F2F05F /* Headers */,
-				FA1899E098AACC5FFF5730AA5D3066DC /* Sources */,
-				425DBB05C3596F243131E25AAFBC7960 /* Frameworks */,
+				3A8BFAB28033699BC879D05C2875F8B6 /* Headers */,
+				63B37936FB32715297067AEC2AA8A170 /* Sources */,
+				B6FBBC3EAAA5589EDD2E5FE14B01B4ED /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1CD292F8803533ED9DF4B66E1A38CE32 /* PBXTargetDependency */,
+				5EBE9906344EBDDF47850BA0684296A1 /* PBXTargetDependency */,
+				F702FCE74C38F947B89694883447D948 /* PBXTargetDependency */,
 			);
 			name = MEKSAdapter;
 			productName = MEKSAdapter;
@@ -166,7 +178,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 6EB15CD3B8BD8AC0EEF8272CF71F263F /* KSAdSDK */;
+					ProjectRef = 554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK */;
+				},
+				{
+					ProjectRef = FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK */;
 				},
 			);
 			projectRoot = "";
@@ -177,50 +192,31 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA1899E098AACC5FFF5730AA5D3066DC /* Sources */ = {
+		63B37936FB32715297067AEC2AA8A170 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69B562DB597FA1067DCF76C79B05BE5 /* MEKSAdapter-dummy.m in Sources */,
-				AE32488824BAF5DC7CBB7B80EA5514C8 /* MEKSAdapter.m in Sources */,
+				FD552D4CA886C65A4304F07C904B94D8 /* MEKSAdapter-dummy.m in Sources */,
+				E874F72C1D82D3548F5219EE55694DDB /* MEKSAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1CD292F8803533ED9DF4B66E1A38CE32 /* PBXTargetDependency */ = {
+		5EBE9906344EBDDF47850BA0684296A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KSAdSDK;
-			targetProxy = 4C74CABBA20F8A999DDE80A63F88ADB6 /* PBXContainerItemProxy */;
+			targetProxy = 0AEF73F0D9CF6F490FDCDE7BCD8CBBD2 /* PBXContainerItemProxy */;
+		};
+		F702FCE74C38F947B89694883447D948 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEAdvSDK;
+			targetProxy = 27ADB79F74A05543168687C4AE43B1EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		13FA778515E40C65CDA3C6030E4F947D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MEKSAdapter/MEKSAdapter-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MEKSAdapter;
-				PRODUCT_NAME = MEKSAdapter;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		361C021BA523CCD11EC2EE2E2FFE4BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -345,9 +341,9 @@
 			};
 			name = Release;
 		};
-		670CF3F0A78664AC5469342C16836050 /* Release */ = {
+		8794EDCA7441E820DBF6248824A7453D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2E55B988AA7AC49462234EA8891DB4E /* MEKSAdapter.xcconfig */;
+			baseConfigurationReference = 60FAABB5D774822FE60FD31F38868312 /* MEKSAdapter.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -370,23 +366,47 @@
 			};
 			name = Release;
 		};
+		FDE7DCA512DDE3D6B9E385E6BE8272AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A8484C195C7B387471EA750E1F929D6 /* MEKSAdapter.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MEKSAdapter/MEKSAdapter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MEKSAdapter;
+				PRODUCT_NAME = MEKSAdapter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0DDFEBE734289D55C0DC9306A5BE4A6D /* Build configuration list for PBXNativeTarget "MEKSAdapter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				13FA778515E40C65CDA3C6030E4F947D /* Debug */,
-				670CF3F0A78664AC5469342C16836050 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		710BE04F528E3B431BDAAEC43B85F231 /* Build configuration list for PBXProject "MEKSAdapter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				361C021BA523CCD11EC2EE2E2FFE4BAC /* Debug */,
 				5F65229E5C68B02E2A66AC095C11CC10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE37DEBA9325E68B5E59F6DCA64EECE7 /* Build configuration list for PBXNativeTarget "MEKSAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE7DCA512DDE3D6B9E385E6BE8272AF /* Debug */,
+				8794EDCA7441E820DBF6248824A7453D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

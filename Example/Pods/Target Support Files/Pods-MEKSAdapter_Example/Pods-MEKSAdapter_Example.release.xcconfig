@@ -1,9 +1,10 @@
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/KSAdSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MEKSAdapter"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/MEKSAdapter"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MEKSAdapter" -iframework "${PODS_ROOT}/KSAdSDK"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"MEKSAdapter" -l"resolv.9" -l"z" -framework "AVFoundation" -framework "AVKit" -framework "Accelerate" -framework "AdSupport" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreMedia" -framework "CoreTelephony" -framework "KSAdSDK" -framework "MediaPlayer" -framework "MobileCoreServices" -framework "Security" -framework "StoreKit" -framework "SystemConfiguration" -framework "UIKit" -framework "WebKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MEAdvSDK" "${PODS_ROOT}/Headers/Public/MEKSAdapter" "${PODS_ROOT}/Headers/Public/Reachability" "${PODS_ROOT}/Headers/Public/Realm"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/MEAdvSDK" "${PODS_CONFIGURATION_BUILD_DIR}/MEKSAdapter" "${PODS_CONFIGURATION_BUILD_DIR}/Reachability" "${PODS_CONFIGURATION_BUILD_DIR}/Realm" "${PODS_ROOT}/Realm/core"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MEAdvSDK" -isystem "${PODS_ROOT}/Headers/Public/Reachability" -isystem "${PODS_ROOT}/Headers/Public/Realm" -isystem "${PODS_ROOT}/Headers/Public/MEKSAdapter" -iframework "${PODS_ROOT}/KSAdSDK"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"MEAdvSDK" -l"MEKSAdapter" -l"Reachability" -l"Realm" -l"c++" -l"realmcore-ios" -l"resolv.9" -l"sqlite3" -l"z" -framework "AVFoundation" -framework "AVKit" -framework "Accelerate" -framework "AdSupport" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreMedia" -framework "CoreTelephony" -framework "Foundation" -framework "KSAdSDK" -framework "MediaPlayer" -framework "MessageUI" -framework "MobileCoreServices" -framework "QuickLook" -framework "Security" -framework "StoreKit" -framework "SystemConfiguration" -framework "UIKit" -framework "WebKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

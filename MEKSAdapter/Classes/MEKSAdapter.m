@@ -8,12 +8,19 @@
 #import "MEKSAdapter.h"
 #import <KSAdSDK/KSAdSDK.h>
 
-@interface MEKSAdapter ()<KSRewardedVideoAdDelegate>
+@interface MEKSAdapter ()<KSRewardedVideoAdDelegate, KSAdSplashInteractDelegate, KSFeedAdsManagerDelegate, KSFeedAdDelegate>
 
 /// 激励视频对象
 @property (nonatomic, strong) KSRewardedVideoAd *rewardedAd;
 /// 判断激励视频是否能给奖励,每次关闭视频变false
 @property (nonatomic, assign) BOOL isEarnRewarded;
+
+/// 开屏广告控制器
+@property (nonatomic, strong) UIViewController *rootVc;
+
+/// 信息流广告控制器
+@property (nonatomic, strong) KSFeedAdsManager *feedAdsManager;
+@property (nonatomic, strong) KSFeedAd *feedAd;
 
 /// 是否展示误点按钮
 @property (nonatomic, assign) BOOL showFunnyBtn;
@@ -221,4 +228,281 @@
     self.isEarnRewarded = hasReward;
 }
 
+//MARK: 开屏广告
+
+- (BOOL)showSplashWithPosid:(NSString *)posid delay:(NSTimeInterval)delay bottomView:(UIView *)view{
+    
+    UIViewController *vc = [self topVC];
+    if (!vc || !posid) {
+        return NO;
+    }
+    
+    self.posid = posid;
+    self.rootVc = vc;
+    
+    // 开屏⼴广告
+    KSAdSplashManager.posId = posid;
+    KSAdSplashManager.interactDelegate = self; //预加载闪屏⼴广告，可以选择延迟加载
+    [KSAdSplashManager loadSplash];
+    if (KSAdSplashManager.hasCachedSplash) {
+        //如果有本地已缓存⼴广告，检测⼴广告是否有效，如果⼴广告有效，会返回开屏⼴广告控制器器，具体使⽤用可 ⻅见demo
+        [KSAdSplashManager checkSplash:^(KSAdSplashViewController * _Nonnull splashViewController) {
+            if (splashViewController) {
+                splashViewController.modalTransitionStyle =
+                UIModalTransitionStyleCrossDissolve;
+                [self.rootVc presentViewController:splashViewController animated:YES completion:nil];
+            }
+        }];
+    }
+    
+    return YES;
+}
+
+- (void)stopSplashRender {
+    [self dismissSplashViewController:NO];
+}
+
+- (void)dismissSplashViewController:(BOOL)animated {
+    [self.rootVc dismissViewControllerAnimated:animated completion:nil];
+}
+
+//MARK: 交互回调
+//开屏关闭
+- (void)ksad_splashAdDismiss:(BOOL)converted {
+    //convert为YES时需要直接隐藏掉splash，防⽌止影响后续转化⻚页⾯面展示
+    [self dismissSplashViewController:!converted];
+    
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashDismiss:)]) {
+        [self.splashDelegate adapterSplashDismiss:self];
+    }
+    DLog(@"----%@", NSStringFromSelector(_cmd));
+}
+//开屏跳过
+- (void)ksad_splashAdVideoDidSkipped:(NSTimeInterval)playDuration {
+    
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashClose:)]) {
+        [self.splashDelegate adapterSplashClose:self];
+    }
+    
+    DLog(@"----%@:%f", NSStringFromSelector(_cmd), playDuration);
+    
+}
+//开屏点击
+- (void)ksad_splashAdClicked {
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterVideoClicked:)]) {
+        [self.splashDelegate adapterSplashClicked:self];
+    }
+    
+    // 上报日志
+       MEAdLogModel *model = [MEAdLogModel new];
+       model.event = AdLogEventType_Click;
+       model.st_t = AdLogAdType_Splash;
+       model.so_t = self.sortType;
+       model.posid = self.sceneId;
+       model.network = self.networkName;
+       model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+       // 先保存到数据库
+       [MEAdLogModel saveLogModelToRealm:model];
+       // 立即上传
+       [MEAdLogModel uploadImmediately];
+    
+    DLog(@"----%@", NSStringFromSelector(_cmd));
+}
+//开屏展示
+- (void)ksad_splashAdDidShow {
+    
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashShowSuccess:)]) {
+        [self.splashDelegate adapterSplashShowSuccess:self];
+    }
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Show;
+    model.st_t = AdLogAdType_Splash;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+    
+    DLog(@"----%@", NSStringFromSelector(_cmd));
+}
+//开屏⼴广告开始播放
+- (void)ksad_splashAdVideoDidStartPlay {
+    DLog(@"----%@", NSStringFromSelector(_cmd));
+}
+//开屏⼴广告播放失败
+- (void)ksad_splashAdVideoFailedToPlay:(NSError *)error {
+    
+    [self dismissSplashViewController:NO];
+
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapter:splashShowFailure:)]) {
+        [self.splashDelegate adapter:self splashShowFailure:error];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_Splash;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Normal;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+    
+    DLog(@"----%@, %@", NSStringFromSelector(_cmd), error);
+    
+}
+//开屏⼴广告转化根控制器器，默认keyWindow.rootViewController
+//- (UIViewController *)ksad_splashAdConversionRootVC {
+//    return self.window.rootViewController;
+//
+//}
+
+//MARK: 信息流
+
+/// 显示信息流视图
+/// @param feedWidth 广告位宽度
+/// @param posId 广告位id
+- (BOOL)showFeedViewWithWidth:(CGFloat)feedWidth
+                        posId:(nonnull NSString *)posId {
+    return [self showFeedViewWithWidth:feedWidth posId:posId withDisplayTime:0];
+}
+
+/// 显示信息流视图
+/// @param feedWidth 父视图feedWidth
+/// @param posId 广告位id
+/// @param displayTime 展示时长,0表示不限制时长
+- (BOOL)showFeedViewWithWidth:(CGFloat)feedWidth
+                        posId:(nonnull NSString *)posId
+              withDisplayTime:(NSTimeInterval)displayTime {
+    
+    self.needShow = YES;
+    self.posid = posId;
+    
+    self.feedAdsManager = [[KSFeedAdsManager alloc] initWithPosId:self.posid size:CGSizeMake(feedWidth, 0)];
+    self.feedAdsManager.delegate = self;
+    [self.feedAdsManager loadAdDataWithCount:1];
+    
+    return YES;
+}
+
+- (void)removeFeedViewWithPosid:(NSString *)posid {
+    self.needShow = NO;
+}
+   
+#pragma mark - KSFeedAdsManagerDelegate
+- (void)feedAdsManagerSuccessToLoad:(KSFeedAdsManager *)adsManager nativeAds: (NSArray<KSFeedAd *> *_Nullable)feedAdDataArray {
+    
+    self.feedAd = adsManager.data[0];
+    self.feedAd.delegate = self;
+    
+    UIView *feedView = self.feedAd.feedView;
+    
+    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedShowSuccess:feedView:)]) {
+        [self.feedDelegate adapterFeedShowSuccess:self feedView:feedView];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Load;
+    model.st_t = AdLogAdType_Feed;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+- (void)feedAdsManager:(KSFeedAdsManager *)adsManager didFailWithError: (NSError *_Nullable)error {
+    if (self.needShow) {
+        if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapter:bannerShowFailure:)]) {
+            [self.feedDelegate adapter:self bannerShowFailure:error];
+        }
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_Feed;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Normal;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+    
+}
+#pragma mark - KSFeedAdDelegate
+- (void)feedAdViewWillShow:(KSFeedAd *)feedAd {
+    
+//    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedShowSuccess:feedView:)]) {
+//        [self.feedDelegate adapterFeedShowSuccess:self feedView:feedAd.feedView];
+//    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Show;
+    model.st_t = AdLogAdType_Feed;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+    
+}
+- (void)feedAdDidClick:(KSFeedAd *)feedAd {
+    
+    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedClicked:)]) {
+        [self.feedDelegate adapterFeedClicked:self];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Click;
+    model.st_t = AdLogAdType_Feed;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+    
+}
+- (void)feedAdDislike:(KSFeedAd *)feedAd {
+    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedClose:)]) {
+        [self.feedDelegate adapterFeedClose:self];
+    }
+   
+}
+- (void)feedAdDidShowOtherController:(KSFeedAd *)nativeAd interactionType: (KSAdInteractionType)interactionType {
+    
+}
+- (void)feedAdDidCloseOtherController:(KSFeedAd *)nativeAd interactionType: (KSAdInteractionType)interactionType {
+    
+}
 @end
