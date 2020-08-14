@@ -1,11 +1,11 @@
 PODS:
   - KSAdSDK (3.2.1)
-  - MEAdvSDK (0.1.4):
+  - MEAdvSDK (0.1.5):
     - Reachability
     - Realm (= 4.4.1)
-  - MEKSAdapter (0.1.0):
+  - MEKSAdapter (0.1.1):
     - KSAdSDK (= 3.2.1)
-    - MEAdvSDK (= 0.1.4)
+    - MEAdvSDK
   - Reachability (3.2)
   - Realm (4.4.1):
     - Realm/Headers (= 4.4.1)
@@ -27,8 +27,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KSAdSDK: 2b27aa513f8efb41702761c980e74fd8ffa86016
-  MEAdvSDK: 6d2f5e002ef415b8f7b9c52f81e0814285b7576a
-  MEKSAdapter: 9dce89aa89f835bc32731427efd4872a96ee972b
+  MEAdvSDK: b8d6410268764e30f3c89fae0179948add760b71
+  MEKSAdapter: 3ee71a152bb97f4c17aae76305e42f013a9f4af9
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
 

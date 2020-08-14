@@ -1,6 +1,0 @@
-framework module MEKSAdapter {
-  umbrella header "MEKSAdapter-umbrella.h"
-
-  export *
-  module * { export * }
-}

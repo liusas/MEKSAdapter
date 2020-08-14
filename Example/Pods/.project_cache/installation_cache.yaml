@@ -16,16 +16,16 @@ CACHE_KEYS:
       MEAdvSDK:
         :debug: 8747ad686f58fa12abc9af4b0fa8ffe3
         :release: 8747ad686f58fa12abc9af4b0fa8ffe3
-    CHECKSUM: 6d2f5e002ef415b8f7b9c52f81e0814285b7576a
+    CHECKSUM: b8d6410268764e30f3c89fae0179948add760b71
     PROJECT_NAME: MEAdvSDK
     SPECS:
-      - MEAdvSDK (0.1.4)
+      - MEAdvSDK (0.1.5)
   MEKSAdapter:
     BUILD_SETTINGS_CHECKSUM:
       MEKSAdapter:
         :debug: 9078635049707fcde39311d397f14b5a
         :release: 9078635049707fcde39311d397f14b5a
-    CHECKSUM: 9dce89aa89f835bc32731427efd4872a96ee972b
+    CHECKSUM: 3ee71a152bb97f4c17aae76305e42f013a9f4af9
     FILES:
       - "../../LICENSE"
       - "../../MEKSAdapter/Classes/MEKSAdapter.h"
@@ -33,7 +33,7 @@ CACHE_KEYS:
       - "../../README.md"
     PROJECT_NAME: MEKSAdapter
     SPECS:
-      - MEKSAdapter (0.1.0)
+      - MEKSAdapter (0.1.1)
   Pods-MEKSAdapter_Example:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 7817ab9c670ecfce49ca6a546335714b

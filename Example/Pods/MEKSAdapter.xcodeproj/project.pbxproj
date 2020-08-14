@@ -20,7 +20,7 @@
 			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
 			remoteInfo = KSAdSDK;
 		};
-		27ADB79F74A05543168687C4AE43B1EE /* PBXContainerItemProxy */ = {
+		9706FCBBDFE9B518212774CB2EE02C30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
@@ -149,7 +149,7 @@
 			);
 			dependencies = (
 				5EBE9906344EBDDF47850BA0684296A1 /* PBXTargetDependency */,
-				F702FCE74C38F947B89694883447D948 /* PBXTargetDependency */,
+				BF61D5FACC9323353733191E0D1ADEB5 /* PBXTargetDependency */,
 			);
 			name = MEKSAdapter;
 			productName = MEKSAdapter;
@@ -209,10 +209,10 @@
 			name = KSAdSDK;
 			targetProxy = 0AEF73F0D9CF6F490FDCDE7BCD8CBBD2 /* PBXContainerItemProxy */;
 		};
-		F702FCE74C38F947B89694883447D948 /* PBXTargetDependency */ = {
+		BF61D5FACC9323353733191E0D1ADEB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEAdvSDK;
-			targetProxy = 27ADB79F74A05543168687C4AE43B1EE /* PBXContainerItemProxy */;
+			targetProxy = 9706FCBBDFE9B518212774CB2EE02C30 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

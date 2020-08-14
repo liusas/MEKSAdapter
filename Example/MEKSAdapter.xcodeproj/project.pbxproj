@@ -207,8 +207,8 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				4C5224F03B0A6E31EE53F171 /* [CP] Copy Pods Resources */,
-				8B84EC918575AD062B5A8813 /* [CP] Embed Pods Frameworks */,
+				067CEE0F74F53517339EE571 /* [CP] Embed Pods Frameworks */,
+				15A5F81508AA25DECA063A12 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,7 +296,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C5224F03B0A6E31EE53F171 /* [CP] Copy Pods Resources */ = {
+		067CEE0F74F53517339EE571 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MEKSAdapter_Example/Pods-MEKSAdapter_Example-frameworks.sh",
+				"${PODS_ROOT}/KSAdSDK/KSAdSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSAdSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MEKSAdapter_Example/Pods-MEKSAdapter_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15A5F81508AA25DECA063A12 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,24 +352,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B84EC918575AD062B5A8813 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MEKSAdapter_Example/Pods-MEKSAdapter_Example-frameworks.sh",
-				"${PODS_ROOT}/KSAdSDK/KSAdSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSAdSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MEKSAdapter_Example/Pods-MEKSAdapter_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DDC1BE69952A0C3478CFB2DD /* [CP] Check Pods Manifest.lock */ = {
