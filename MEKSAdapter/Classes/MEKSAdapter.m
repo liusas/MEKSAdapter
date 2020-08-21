@@ -20,7 +20,6 @@
 
 /// 信息流广告控制器
 @property (nonatomic, strong) KSFeedAdsManager *feedAdsManager;
-@property (nonatomic, strong) KSFeedAd *feedAd;
 
 /// 是否展示误点按钮
 @property (nonatomic, assign) BOOL showFunnyBtn;
@@ -58,7 +57,7 @@
 }
 
 // MARK: - 激励视频广告
-- (BOOL)showRewardVideoWithPosid:(NSString *)posid {
+- (BOOL)loadRewardVideoWithPosid:(NSString *)posid {
     self.posid = posid;
     self.isEarnRewarded = false;
     
@@ -66,23 +65,19 @@
         return NO;
     }
     
-    if (self.isTheVideoPlaying == YES) {
-        // 若当前有视频正在播放,则此次激励视频不播放
-        return YES;
-    }
-    
-    if (!self.rewardedAd || self.rewardedAd.isValid == NO) {
-        self.rewardedAd = nil;
-        self.needShow = YES;
-        self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:self.posid rewardedVideoModel:[KSRewardedVideoModel new]];
-        self.rewardedAd.delegate = self;
-        [self.rewardedAd loadAdData];
-    } else {
-        self.needShow = NO;
-        [self.rewardedAd showAdFromRootViewController:[self topVC] showScene:@"" type:KSRewardedVideoAdRewardedTypeNormal];
-    }
+    self.rewardedAd = nil;
+    self.needShow = YES;
+    self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:self.posid rewardedVideoModel:[KSRewardedVideoModel new]];
+    self.rewardedAd.delegate = self;
+    [self.rewardedAd loadAdData];
     
     return YES;
+}
+
+- (void)showRewardedVideoFromViewController:(UIViewController *)rootVC posid:(NSString *)posid {
+    if (self.isTheVideoPlaying == NO && self.rewardedAd.isValid) {
+        [self.rewardedAd showAdFromRootViewController:rootVC showScene:@"" type:KSRewardedVideoAdRewardedTypeNormal];
+    }
 }
 
 /// 结束当前视频
@@ -95,9 +90,16 @@
     }
 }
 
+- (BOOL)hasRewardedVideoAvailableWithPosid:(NSString *)posid {
+    return self.rewardedAd.isValid;
+}
+
 #pragma mark - KSRewardedVideoAdDelegate
 - (void)rewardedVideoAdDidLoad:(KSRewardedVideoAd *)rewardedVideoAd {
     // 这里表示广告素材已经准备好了,下面的代理rewardedVideoAdVideoDidLoad表示可以播放了
+    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoLoadSuccess:)]) {
+        [self.videoDelegate adapterVideoLoadSuccess:self];
+    }
     // 上报日志
     MEAdLogModel *model = [MEAdLogModel new];
     model.event = AdLogEventType_Load;
@@ -115,7 +117,8 @@
 - (void)rewardedVideoAd:(KSRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
     // 视频广告加载失败
     if (self.needShow) {
-        if (self.isTheVideoPlaying == NO && self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        self.isTheVideoPlaying = NO;
+        if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
             [self.videoDelegate adapter:self videoShowFailure:error];
         }
     }
@@ -141,12 +144,8 @@
 
 - (void)rewardedVideoAdVideoDidLoad:(KSRewardedVideoAd *)rewardedVideoAd {
     if (self.needShow) {
-        if ([[self topVC] isKindOfClass:NSClassFromString(@"GDTWebViewController")]) {
-            return;
-        }
-        if (rewardedVideoAd.isValid) {
-            self.isTheVideoPlaying = YES;
-            [self.rewardedAd showAdFromRootViewController:[self topVC]];
+        if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoDidDownload:)]) {
+            [self.videoDelegate adapterVideoDidDownload:self];
         }
     }
     // 这里能获取到ecpm
@@ -156,6 +155,7 @@
 
 - (void)rewardedVideoAdWillVisible:(KSRewardedVideoAd *)rewardedVideoAd {
     // 视频即将播放
+    self.isTheVideoPlaying = YES;
     if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoShowSuccess:)]) {
         [self.videoDelegate adapterVideoShowSuccess:self];
     }
@@ -229,8 +229,25 @@
 }
 
 //MARK: 开屏广告
+- (void)preloadSplashWithPosid:(NSString *)posid {
+    // 开屏⼴广告
+    KSAdSplashManager.posId = posid;
+    KSAdSplashManager.interactDelegate = self; //预加载闪屏⼴广告，可以选择延迟加载
+    [KSAdSplashManager loadSplash];
+    if (KSAdSplashManager.hasCachedSplash) {
+        //如果有本地已缓存⼴广告，检测⼴广告是否有效，如果⼴广告有效，会返回开屏⼴广告控制器器，具体使⽤用可 ⻅见demo
+        [KSAdSplashManager checkSplash:^(KSAdSplashViewController * _Nonnull splashViewController) {
+            if (splashViewController) {
+            }
+        }];
+    }
+}
 
-- (BOOL)showSplashWithPosid:(NSString *)posid delay:(NSTimeInterval)delay bottomView:(UIView *)view{
+- (BOOL)loadAndShowSplashWithPosid:(NSString *)posid {
+    return [self loadAndShowSplashWithPosid:posid delay:0 bottomView:nil];
+}
+
+- (BOOL)loadAndShowSplashWithPosid:(NSString *)posid delay:(NSTimeInterval)delay bottomView:(UIView *)view {
     
     UIViewController *vc = [self topVC];
     if (!vc || !posid) {
@@ -272,8 +289,8 @@
     //convert为YES时需要直接隐藏掉splash，防⽌止影响后续转化⻚页⾯面展示
     [self dismissSplashViewController:!converted];
     
-    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashDismiss:)]) {
-        [self.splashDelegate adapterSplashDismiss:self];
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashClose:)]) {
+        [self.splashDelegate adapterSplashClose:self];
     }
     DLog(@"----%@", NSStringFromSelector(_cmd));
 }
@@ -310,7 +327,12 @@
 }
 //开屏展示
 - (void)ksad_splashAdDidShow {
+    // 因快手没有给加载成功的回调,所以选择在 show 回调之前回调加载成功
+    if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashLoadSuccess:)]) {
+        [self.splashDelegate adapterSplashLoadSuccess:self];
+    }
     
+
     if (self.splashDelegate && [self.splashDelegate respondsToSelector:@selector(adapterSplashShowSuccess:)]) {
         [self.splashDelegate adapterSplashShowSuccess:self];
     }
@@ -375,8 +397,8 @@
 /// @param feedWidth 广告位宽度
 /// @param posId 广告位id
 - (BOOL)showFeedViewWithWidth:(CGFloat)feedWidth
-                        posId:(nonnull NSString *)posId {
-    return [self showFeedViewWithWidth:feedWidth posId:posId withDisplayTime:0];
+                        posId:(nonnull NSString *)posId count:(NSInteger)count {
+    return [self showFeedViewWithWidth:feedWidth posId:posId count:count withDisplayTime:0];
 }
 
 /// 显示信息流视图
@@ -385,6 +407,7 @@
 /// @param displayTime 展示时长,0表示不限制时长
 - (BOOL)showFeedViewWithWidth:(CGFloat)feedWidth
                         posId:(nonnull NSString *)posId
+                        count:(NSInteger)count
               withDisplayTime:(NSTimeInterval)displayTime {
     
     self.needShow = YES;
@@ -392,7 +415,7 @@
     
     self.feedAdsManager = [[KSFeedAdsManager alloc] initWithPosId:self.posid size:CGSizeMake(feedWidth, 0)];
     self.feedAdsManager.delegate = self;
-    [self.feedAdsManager loadAdDataWithCount:1];
+    [self.feedAdsManager loadAdDataWithCount:count];
     
     return YES;
 }
@@ -404,27 +427,31 @@
 #pragma mark - KSFeedAdsManagerDelegate
 - (void)feedAdsManagerSuccessToLoad:(KSFeedAdsManager *)adsManager nativeAds: (NSArray<KSFeedAd *> *_Nullable)feedAdDataArray {
     
-    self.feedAd = adsManager.data[0];
-    self.feedAd.delegate = self;
+    NSMutableArray *expressionViews = [NSMutableArray array];
+    [feedAdDataArray enumerateObjectsUsingBlock:^(KSFeedAd * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        KSFeedAd *feedAd = obj;
+        feedAd.delegate = self;
+        
+        UIView *feedView = feedAd.feedView;
+        [expressionViews addObject:feedView];
+        
+        // 上报日志
+        MEAdLogModel *model = [MEAdLogModel new];
+        model.event = AdLogEventType_Load;
+        model.st_t = AdLogAdType_Feed;
+        model.so_t = self.sortType;
+        model.posid = self.sceneId;
+        model.network = self.networkName;
+        model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+        // 先保存到数据库
+        [MEAdLogModel saveLogModelToRealm:model];
+        // 立即上传
+        [MEAdLogModel uploadImmediately];
+    }];
     
-    UIView *feedView = self.feedAd.feedView;
-    
-    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedShowSuccess:feedView:)]) {
-        [self.feedDelegate adapterFeedShowSuccess:self feedView:feedView];
+    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedLoadSuccess:feedViews:)]) {
+        [self.feedDelegate adapterFeedLoadSuccess:self feedViews:expressionViews];
     }
-    
-    // 上报日志
-    MEAdLogModel *model = [MEAdLogModel new];
-    model.event = AdLogEventType_Load;
-    model.st_t = AdLogAdType_Feed;
-    model.so_t = self.sortType;
-    model.posid = self.sceneId;
-    model.network = self.networkName;
-    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
-    // 先保存到数据库
-    [MEAdLogModel saveLogModelToRealm:model];
-    // 立即上传
-    [MEAdLogModel uploadImmediately];
 }
 - (void)feedAdsManager:(KSFeedAdsManager *)adsManager didFailWithError: (NSError *_Nullable)error {
     if (self.needShow) {
@@ -455,9 +482,9 @@
 #pragma mark - KSFeedAdDelegate
 - (void)feedAdViewWillShow:(KSFeedAd *)feedAd {
     
-//    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedShowSuccess:feedView:)]) {
-//        [self.feedDelegate adapterFeedShowSuccess:self feedView:feedAd.feedView];
-//    }
+    if (self.feedDelegate && [self.feedDelegate respondsToSelector:@selector(adapterFeedShowSuccess:feedView:)]) {
+        [self.feedDelegate adapterFeedShowSuccess:self feedView:feedAd.feedView];
+    }
     
     // 上报日志
     MEAdLogModel *model = [MEAdLogModel new];
