@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MEKSAdapter'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A adapter of kuaishou for mediation SDK'
 
 # This description is used to generate tags and improve search results.
@@ -38,5 +38,5 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'KSAdSDK', '3.2.1'
-  s.dependency "MEAdvSDK", '~> 1.0.0'
+  s.dependency "MEAdvSDK", '~> 1.0.1'
 end

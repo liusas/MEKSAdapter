@@ -8,14 +8,15 @@
 #import "MEKSAdapter.h"
 #import <KSAdSDK/KSAdSDK.h>
 
-@interface MEKSAdapter ()<KSRewardedVideoAdDelegate, KSAdSplashInteractDelegate, KSFeedAdsManagerDelegate, KSFeedAdDelegate>
+@interface MEKSAdapter ()<KSRewardedVideoAdDelegate, KSAdSplashInteractDelegate, KSFeedAdsManagerDelegate, KSFeedAdDelegate, KSFullscreenVideoAdDelegate>
 
 /// 激励视频对象
 @property (nonatomic, strong) KSRewardedVideoAd *rewardedAd;
+/// 全屏视频广告
+@property (nonatomic, strong) KSFullscreenVideoAd *fullscreenVideoAd;
 /// 判断激励视频是否能给奖励,每次关闭视频变false
 @property (nonatomic, assign) BOOL isEarnRewarded;
 
-/// 开屏广告控制器
 @property (nonatomic, strong) UIViewController *rootVc;
 
 /// 信息流广告控制器
@@ -61,10 +62,6 @@
     self.posid = posid;
     self.isEarnRewarded = false;
     
-    if (![self topVC]) {
-        return NO;
-    }
-    
     self.rewardedAd = nil;
     self.needShow = YES;
     self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:self.posid rewardedVideoModel:[KSRewardedVideoModel new]];
@@ -75,6 +72,10 @@
 }
 
 - (void)showRewardedVideoFromViewController:(UIViewController *)rootVC posid:(NSString *)posid {
+    if (rootVC != nil) {
+        self.rootVc = rootVC;
+    }
+    
     if (self.isTheVideoPlaying == NO && self.rewardedAd.isValid) {
         [self.rewardedAd showAdFromRootViewController:rootVC showScene:@"" type:KSRewardedVideoAdRewardedTypeNormal];
     }
@@ -84,9 +85,9 @@
 - (void)stopCurrentVideoWithPosid:(NSString *)posid {
     self.needShow = NO;
     if (self.rewardedAd.isValid) {
-        UIViewController *topVC = [self topVC];
-        [topVC dismissViewControllerAnimated:YES completion:nil];
-//        self.rewardVideoAd = nil;
+        if (self.rootVc) {
+            [self.rootVc dismissViewControllerAnimated:YES completion:nil];
+        }
     }
 }
 
@@ -115,6 +116,8 @@
 }
 
 - (void)rewardedVideoAd:(KSRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
+    self.rootVc = nil;
+    
     // 视频广告加载失败
     if (self.needShow) {
         self.isTheVideoPlaying = NO;
@@ -194,6 +197,7 @@
 }
 
 - (void)rewardedVideoAdDidClose:(KSRewardedVideoAd *)rewardedVideoAd {
+    self.rootVc = nil;
 }
 
 - (void)rewardedVideoAdDidClick:(KSRewardedVideoAd *)rewardedVideoAd {
@@ -226,6 +230,203 @@
     NSLog(@"%@", text);
     // 可以给收益
     self.isEarnRewarded = hasReward;
+}
+
+// MARK: - 全屏视频广告
+/// 加载全屏视频
+- (BOOL)loadFullscreenWithPosid:(NSString *)posid {
+    self.posid = posid;
+    self.isEarnRewarded = false;
+    
+    self.needShow = YES;
+    self.fullscreenVideoAd = [[KSFullscreenVideoAd alloc]
+    initWithPosId:self.posid];
+    self.fullscreenVideoAd.delegate = self;
+    [self.fullscreenVideoAd loadAdData];
+    
+    return YES;
+}
+
+/// 展示全屏视频
+- (void)showFullscreenVideoFromViewController:(UIViewController *)rootVC posid:(NSString *)posid {
+    if (rootVC != nil) {
+        self.rootVc = rootVC;
+    }
+    
+    if (self.isTheVideoPlaying == NO && self.fullscreenVideoAd.isValid) {
+        [self.fullscreenVideoAd showAdFromRootViewController:rootVC];
+    }
+}
+
+/// 关闭当前视频
+- (void)stopFullscreenVideoWithPosid:(NSString *)posid {
+    self.needShow = NO;
+    if (self.fullscreenVideoAd.isValid) {
+        if (self.rootVc) {
+            [self.rootVc dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
+/// 全屏视频是否有效
+- (BOOL)hasFullscreenVideoAvailableWithPosid:(NSString *)posid {
+    return NO;
+}
+
+// MARK: KSFullscreenVideoAdDelegate
+/**
+ This method is called when video ad material loaded successfully.
+ */
+- (void)fullscreenVideoAdDidLoad:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    // 这里表示广告素材已经准备好了,下面的代理rewardedVideoAdVideoDidLoad表示可以播放了
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoLoadSuccess:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoLoadSuccess:self];
+    }
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Load;
+    model.st_t = AdLogAdType_FullVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+/**
+ This method is called when video ad materia failed to load.
+ @param error : the reason of error
+ */
+- (void)fullscreenVideoAd:(KSFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error {
+    self.rootVc = nil;
+    self.isTheVideoPlaying = NO;
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+        [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Fault;
+    model.st_t = AdLogAdType_FullVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.type = AdLogFaultType_Normal;
+    model.code = error.code;
+    if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+        model.msg = error.localizedDescription;
+    }
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+/**
+ This method is called when cached successfully.
+ */
+- (void)fullscreenVideoAdVideoDidLoad:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoDidDownload:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoDidDownload:self];
+    }
+}
+/**
+ This method is called when video ad slot will be showing.
+ */
+- (void)fullscreenVideoAdWillVisible:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    self.isTheVideoPlaying = YES;
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoShowSuccess:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoShowSuccess:self];
+    }
+}
+
+/**
+ This method is called when video ad is about to close.
+ */
+- (void)fullscreenVideoAdWillClose:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoClose:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoClose:self];
+    }
+    self.isTheVideoPlaying = NO;
+    
+    self.needShow = NO;
+    [self.fullscreenVideoAd loadAdData];
+}
+/**
+ This method is called when video ad is closed.
+ */
+- (void)fullscreenVideoAdDidClose:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    self.rootVc = nil;
+}
+
+/**
+ This method is called when video ad is clicked.
+ */
+- (void)fullscreenVideoAdDidClick:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoClicked:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoClicked:self];
+    }
+    
+    // 上报日志
+    MEAdLogModel *model = [MEAdLogModel new];
+    model.event = AdLogEventType_Click;
+    model.st_t = AdLogAdType_FullVideo;
+    model.so_t = self.sortType;
+    model.posid = self.sceneId;
+    model.network = self.networkName;
+    model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+    // 先保存到数据库
+    [MEAdLogModel saveLogModelToRealm:model];
+    // 立即上传
+    [MEAdLogModel uploadImmediately];
+}
+/**
+ This method is called when video ad play completed or an error occurred.
+ @param error : the reason of error
+ */
+- (void)fullscreenVideoAdDidPlayFinish:(KSFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error {
+    if (error) {
+        DLog(@"视频播放失败");
+        self.isTheVideoPlaying = NO;
+        if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:fullscreenShowFailure:)]) {
+            [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
+        }
+        
+        // 上报日志
+        MEAdLogModel *model = [MEAdLogModel new];
+        model.event = AdLogEventType_Fault;
+        model.st_t = AdLogAdType_FullVideo;
+        model.so_t = self.sortType;
+        model.posid = self.sceneId;
+        model.network = self.networkName;
+        model.type = AdLogFaultType_Render;
+        model.code = error.code;
+        if (error.localizedDescription != nil || error.localizedDescription.length > 0) {
+            model.msg = error.localizedDescription;
+        }
+        model.tk = [self stringMD5:[NSString stringWithFormat:@"%@%ld%@%ld", model.posid, model.so_t, @"mobi", (long)([[NSDate date] timeIntervalSince1970]*1000)]];
+        // 先保存到数据库
+        [MEAdLogModel saveLogModelToRealm:model];
+        // 立即上传
+        [MEAdLogModel uploadImmediately];
+        
+    } else {
+        DLog(@"视频播放完毕");
+        if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoFinishPlay:)]) {
+            [self.fullscreenDelegate adapterFullscreenVideoFinishPlay:self];
+        }
+    }
+}
+
+/**
+ This method is called when the user clicked skip button.
+ */
+- (void)fullscreenVideoAdDidClickSkip:(KSFullscreenVideoAd *)fullscreenVideoAd {
+    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoSkip:)]) {
+        [self.fullscreenDelegate adapterFullscreenVideoSkip:self];
+    }
 }
 
 //MARK: 开屏广告
