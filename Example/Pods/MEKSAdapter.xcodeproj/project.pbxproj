@@ -13,19 +13,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0AEF73F0D9CF6F490FDCDE7BCD8CBBD2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
-			remoteInfo = KSAdSDK;
-		};
-		9706FCBBDFE9B518212774CB2EE02C30 /* PBXContainerItemProxy */ = {
+		838EDAAC61A46E48D5A06C308DCAC9C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA32FFAAD3A6EB9B7FEF98EDCD5534FB /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
 			remoteInfo = MEAdvSDK;
+		};
+		9B41A00D8FEBD960AEA9981E52E31C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 554FEB5D177F2355E5B9E221120586E5 /* KSAdSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
+			remoteInfo = KSAdSDK;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -148,8 +148,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				5EBE9906344EBDDF47850BA0684296A1 /* PBXTargetDependency */,
-				BF61D5FACC9323353733191E0D1ADEB5 /* PBXTargetDependency */,
+				A568B07834EE2AA5F0BC5D19F69D3D83 /* PBXTargetDependency */,
+				F3F8B5AE836E90128E28E5D543E9073E /* PBXTargetDependency */,
 			);
 			name = MEKSAdapter;
 			productName = MEKSAdapter;
@@ -204,15 +204,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5EBE9906344EBDDF47850BA0684296A1 /* PBXTargetDependency */ = {
+		A568B07834EE2AA5F0BC5D19F69D3D83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KSAdSDK;
-			targetProxy = 0AEF73F0D9CF6F490FDCDE7BCD8CBBD2 /* PBXContainerItemProxy */;
+			targetProxy = 9B41A00D8FEBD960AEA9981E52E31C3E /* PBXContainerItemProxy */;
 		};
-		BF61D5FACC9323353733191E0D1ADEB5 /* PBXTargetDependency */ = {
+		F3F8B5AE836E90128E28E5D543E9073E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MEAdvSDK;
-			targetProxy = 9706FCBBDFE9B518212774CB2EE02C30 /* PBXContainerItemProxy */;
+			targetProxy = 838EDAAC61A46E48D5A06C308DCAC9C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

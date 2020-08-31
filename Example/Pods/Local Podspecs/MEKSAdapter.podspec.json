@@ -1,6 +1,6 @@
 {
   "name": "MEKSAdapter",
-  "version": "0.1.1",
+  "version": "1.0.1",
   "summary": "A adapter of kuaishou for mediation SDK",
   "description": "this is a Mobiexchanger's advertise adapter, and we use it as a module",
   "homepage": "https://github.com/liusas/MEKSAdapter.git",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/liusas/MEKSAdapter.git",
-    "tag": "0.1.1"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -24,7 +24,7 @@
       "3.2.1"
     ],
     "MEAdvSDK": [
-
+      "~> 1.0.1"
     ]
   }
 }

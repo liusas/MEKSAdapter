@@ -16,16 +16,16 @@ CACHE_KEYS:
       MEAdvSDK:
         :debug: 8747ad686f58fa12abc9af4b0fa8ffe3
         :release: 8747ad686f58fa12abc9af4b0fa8ffe3
-    CHECKSUM: b8d6410268764e30f3c89fae0179948add760b71
+    CHECKSUM: c29b70b357e16a130bb31e26c680788765d4bb6f
     PROJECT_NAME: MEAdvSDK
     SPECS:
-      - MEAdvSDK (0.1.5)
+      - MEAdvSDK (1.0.1)
   MEKSAdapter:
     BUILD_SETTINGS_CHECKSUM:
       MEKSAdapter:
         :debug: 9078635049707fcde39311d397f14b5a
         :release: 9078635049707fcde39311d397f14b5a
-    CHECKSUM: 3ee71a152bb97f4c17aae76305e42f013a9f4af9
+    CHECKSUM: 8398442accdeb36ab73d3b1636e35693893e5223
     FILES:
       - "../../LICENSE"
       - "../../MEKSAdapter/Classes/MEKSAdapter.h"
@@ -33,13 +33,15 @@ CACHE_KEYS:
       - "../../README.md"
     PROJECT_NAME: MEKSAdapter
     SPECS:
-      - MEKSAdapter (0.1.1)
+      - MEKSAdapter (1.0.1)
   Pods-MEKSAdapter_Example:
     BUILD_SETTINGS_CHECKSUM:
       Debug: 7817ab9c670ecfce49ca6a546335714b
       Release: 7817ab9c670ecfce49ca6a546335714b
     FILES:
       - "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MEAdvBundle.bundle"
+      - "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MobiPubSDK.bundle"
+      - "${PODS_ROOT}/MEAdvSDK/MEAdvSDK/Assets/Resource/MRAID.bundle"
   Pods-MEKSAdapter_Tests:
     BUILD_SETTINGS_CHECKSUM:
       Debug: bf7a7adf38640ebd03d668b61ea59227

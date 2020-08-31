@@ -64,9 +64,15 @@
     
     self.rewardedAd = nil;
     self.needShow = YES;
-    self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:self.posid rewardedVideoModel:[KSRewardedVideoModel new]];
-    self.rewardedAd.delegate = self;
-    [self.rewardedAd loadAdData];
+    
+    if ([self hasRewardedVideoAvailableWithPosid:posid]) {
+        self.rewardedAd.delegate = self;
+        [self.rewardedAd loadAdData];
+    } else {
+        self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:self.posid rewardedVideoModel:[KSRewardedVideoModel new]];
+        self.rewardedAd.delegate = self;
+        [self.rewardedAd loadAdData];
+    }
     
     return YES;
 }
@@ -77,6 +83,7 @@
     }
     
     if (self.isTheVideoPlaying == NO && self.rewardedAd.isValid) {
+        self.needShow = YES;
         [self.rewardedAd showAdFromRootViewController:rootVC showScene:@"" type:KSRewardedVideoAdRewardedTypeNormal];
     }
 }
@@ -98,7 +105,7 @@
 #pragma mark - KSRewardedVideoAdDelegate
 - (void)rewardedVideoAdDidLoad:(KSRewardedVideoAd *)rewardedVideoAd {
     // 这里表示广告素材已经准备好了,下面的代理rewardedVideoAdVideoDidLoad表示可以播放了
-    if (self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoLoadSuccess:)]) {
+    if (self.needShow && self.videoDelegate && [self.videoDelegate respondsToSelector:@selector(adapterVideoLoadSuccess:)]) {
         [self.videoDelegate adapterVideoLoadSuccess:self];
     }
     // 上报日志
@@ -239,10 +246,16 @@
     self.isEarnRewarded = false;
     
     self.needShow = YES;
-    self.fullscreenVideoAd = [[KSFullscreenVideoAd alloc]
-    initWithPosId:self.posid];
-    self.fullscreenVideoAd.delegate = self;
-    [self.fullscreenVideoAd loadAdData];
+    
+    if ([self hasFullscreenVideoAvailableWithPosid:posid]) {
+        self.fullscreenVideoAd.delegate = self;
+        [self.fullscreenVideoAd loadAdData];
+    } else {
+        self.fullscreenVideoAd = [[KSFullscreenVideoAd alloc]
+        initWithPosId:self.posid];
+        self.fullscreenVideoAd.delegate = self;
+        [self.fullscreenVideoAd loadAdData];
+    }
     
     return YES;
 }
@@ -254,6 +267,7 @@
     }
     
     if (self.isTheVideoPlaying == NO && self.fullscreenVideoAd.isValid) {
+        self.needShow = YES;
         [self.fullscreenVideoAd showAdFromRootViewController:rootVC];
     }
 }
@@ -270,7 +284,7 @@
 
 /// 全屏视频是否有效
 - (BOOL)hasFullscreenVideoAvailableWithPosid:(NSString *)posid {
-    return NO;
+    return self.fullscreenVideoAd.isValid;
 }
 
 // MARK: KSFullscreenVideoAdDelegate
@@ -279,7 +293,7 @@
  */
 - (void)fullscreenVideoAdDidLoad:(KSFullscreenVideoAd *)fullscreenVideoAd {
     // 这里表示广告素材已经准备好了,下面的代理rewardedVideoAdVideoDidLoad表示可以播放了
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoLoadSuccess:)]) {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoLoadSuccess:)]) {
         [self.fullscreenDelegate adapterFullscreenVideoLoadSuccess:self];
     }
     // 上报日志
@@ -302,7 +316,7 @@
 - (void)fullscreenVideoAd:(KSFullscreenVideoAd *)fullscreenVideoAd didFailWithError:(NSError *_Nullable)error {
     self.rootVc = nil;
     self.isTheVideoPlaying = NO;
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapter:videoShowFailure:)]) {
         [self.fullscreenDelegate adapter:self fullscreenShowFailure:error];
     }
     
@@ -328,7 +342,7 @@
  This method is called when cached successfully.
  */
 - (void)fullscreenVideoAdVideoDidLoad:(KSFullscreenVideoAd *)fullscreenVideoAd {
-    if (self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoDidDownload:)]) {
+    if (self.needShow && self.fullscreenDelegate && [self.fullscreenDelegate respondsToSelector:@selector(adapterFullscreenVideoDidDownload:)]) {
         [self.fullscreenDelegate adapterFullscreenVideoDidDownload:self];
     }
 }

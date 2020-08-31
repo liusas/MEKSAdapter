@@ -12,62 +12,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2AE9FAC677E4F451EF78784880B7144C /* PBXContainerItemProxy */ = {
+		0623F4893B9C1F6AA874E04BB55BB1CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			containerPortal = 8FC7AB33976980469C91D7E7DF23E00F /* Realm.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 89BB5CC50D993C64B2A587BE6B86EAD1;
-			remoteInfo = "Pods-MEKSAdapter_Example";
+			remoteGlobalIDString = BC4AC9FBD7453D9D72102559C8F6B8AC;
+			remoteInfo = Realm;
 		};
-		4BF5EC001D57FBC0FBFE9AC0DACB6588 /* PBXContainerItemProxy */ = {
+		30C8BDDE77F83519049E8A243FE85883 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 06DE529B19EACC2998018D2E683F1EF3 /* MEAdvSDK.xcodeproj */;
+			containerPortal = 5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B1A12BF7022690FC3855E7A43566AAC;
 			remoteInfo = MEAdvSDK;
 		};
-		8D301904A64E981E765EF918A8CDFE1C /* PBXContainerItemProxy */ = {
+		31C24FFF4C3522983FFB8464A4969461 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 95DF10B39091E6F81C63D684B33700B8 /* KSAdSDK.xcodeproj */;
+			containerPortal = 7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 52F8E625A098A051AC611874CB74C4C7;
 			remoteInfo = KSAdSDK;
 		};
-		9A418EEB29E000BAAAE7DD5421114BD5 /* PBXContainerItemProxy */ = {
+		B9564AB19A73BA851B519B14AAF5E7AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0FF6B74271FDCDBC6873E667DB6B9091 /* MEKSAdapter.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F6997BAF55C22AFCC4F7CDFB82C038AF;
 			remoteInfo = MEKSAdapter;
 		};
-		AE63A932EDE40AF12DAE7B93647691C6 /* PBXContainerItemProxy */ = {
+		BD6515100564E68C1E7958208372B922 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0E9C0BBAF35437479139655075F96ECC /* Reachability.xcodeproj */;
+			containerPortal = 2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = DA1EBD7850A215E94DBD19A247725F9F;
 			remoteInfo = Reachability;
 		};
-		D7DECC4642CC43F010ED202F64409C19 /* PBXContainerItemProxy */ = {
+		C90335227D78837F298EC7F8F672D2CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C595524A4897D518C87A792F491FC18 /* Realm.xcodeproj */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BC4AC9FBD7453D9D72102559C8F6B8AC;
-			remoteInfo = Realm;
+			remoteGlobalIDString = 89BB5CC50D993C64B2A587BE6B86EAD1;
+			remoteInfo = "Pods-MEKSAdapter_Example";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02BA8C1F21C365E0B66C9425D51019AC /* Pods-MEKSAdapter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEKSAdapter_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		06DE529B19EACC2998018D2E683F1EF3 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
 		08B76BDCF63D6168FA1DDC686DDB9C40 /* Pods-MEKSAdapter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MEKSAdapter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		0E9C0BBAF35437479139655075F96ECC /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Reachability; path = Reachability.xcodeproj; sourceTree = "<group>"; };
 		0FF6B74271FDCDBC6873E667DB6B9091 /* MEKSAdapter */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEKSAdapter; path = MEKSAdapter.xcodeproj; sourceTree = "<group>"; };
 		226325FE46C94D45FC5B07F437266656 /* Pods-MEKSAdapter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MEKSAdapter_Example-resources.sh"; sourceTree = "<group>"; };
 		272244A438318B1DB77C778ACD923C32 /* Pods-MEKSAdapter_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MEKSAdapter_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Reachability; path = Reachability.xcodeproj; sourceTree = "<group>"; };
 		3EFB7FD886913FEB199928E2B4C20390 /* Pods-MEKSAdapter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MEKSAdapter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		451390E5DFA0EEA9F3FBE51A1C2FB6C2 /* Pods-MEKSAdapter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MEKSAdapter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C595524A4897D518C87A792F491FC18 /* Realm */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Realm; path = Realm.xcodeproj; sourceTree = "<group>"; };
-		95DF10B39091E6F81C63D684B33700B8 /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
+		5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MEAdvSDK; path = MEAdvSDK.xcodeproj; sourceTree = "<group>"; };
+		7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSAdSDK; path = KSAdSDK.xcodeproj; sourceTree = "<group>"; };
+		8FC7AB33976980469C91D7E7DF23E00F /* Realm */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Realm; path = Realm.xcodeproj; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A015C1D3B9EC9A69A134E3482D52C8FE /* Pods-MEKSAdapter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MEKSAdapter_Example-dummy.m"; sourceTree = "<group>"; };
 		A62F02796BB85C25A071842F754573BB /* Pods-MEKSAdapter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MEKSAdapter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -97,17 +97,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		137ED520B624D12061736F1D2914A96C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				95DF10B39091E6F81C63D684B33700B8 /* KSAdSDK */,
-				06DE529B19EACC2998018D2E683F1EF3 /* MEAdvSDK */,
-				0E9C0BBAF35437479139655075F96ECC /* Reachability */,
-				7C595524A4897D518C87A792F491FC18 /* Realm */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		3B61315489080B69ACE8BFAA8863DBA1 /* Pods-MEKSAdapter_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +136,24 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		88476506D3F38B69C78A7B975C4D748F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK */,
+				5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK */,
+				2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability */,
+				8FC7AB33976980469C91D7E7DF23E00F /* Realm */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				5223B9A600A84D4E6FE8F03ED873587F /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				137ED520B624D12061736F1D2914A96C /* Pods */,
+				88476506D3F38B69C78A7B975C4D748F /* Pods */,
 				5A25DA39EC0F2DF17EC14991D6E73F06 /* Products */,
 				7F6806195A0946AD21A80C8EDB12DA76 /* Targets Support Files */,
 			);
@@ -212,7 +212,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				560B48F60E9312E69F23EECA2A8223E5 /* PBXTargetDependency */,
+				AD7092E47D86F142A32CA2E6495E9F01 /* PBXTargetDependency */,
 			);
 			name = "Pods-MEKSAdapter_Tests";
 			productName = "Pods-MEKSAdapter_Tests";
@@ -230,11 +230,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				5526846D4CC8CED4D6571C15E0E3A52F /* PBXTargetDependency */,
-				66C27A188FFA7198808091CDF027EEBC /* PBXTargetDependency */,
-				05A3BDBA7BF6A49EFF37C8E2BB7A8449 /* PBXTargetDependency */,
-				4B52F38D07DF4963CD6A28D8320CB0D1 /* PBXTargetDependency */,
-				CEEAA64C2CAF5DF9059D994C412F439F /* PBXTargetDependency */,
+				096841AFADA1A6B7DF54343283BEAA74 /* PBXTargetDependency */,
+				49ED2118E7583CC80E844D683B6E3E4B /* PBXTargetDependency */,
+				4A8DDD78BDF94C1512B5CE4083916C26 /* PBXTargetDependency */,
+				852EC1CB49303EB113195C74184DEEC1 /* PBXTargetDependency */,
+				20E1516BF2A8B5EC3C20C6677D531BE0 /* PBXTargetDependency */,
 			);
 			name = "Pods-MEKSAdapter_Example";
 			productName = "Pods-MEKSAdapter_Example";
@@ -263,19 +263,19 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 95DF10B39091E6F81C63D684B33700B8 /* KSAdSDK */;
+					ProjectRef = 5012CA6B82C43019807A564A4721FE24 /* MEAdvSDK */;
 				},
 				{
-					ProjectRef = 06DE529B19EACC2998018D2E683F1EF3 /* MEAdvSDK */;
+					ProjectRef = 2B9AEEF4BF6DABAADF3A728814F3D13E /* Reachability */;
+				},
+				{
+					ProjectRef = 8FC7AB33976980469C91D7E7DF23E00F /* Realm */;
 				},
 				{
 					ProjectRef = 0FF6B74271FDCDBC6873E667DB6B9091 /* MEKSAdapter */;
 				},
 				{
-					ProjectRef = 0E9C0BBAF35437479139655075F96ECC /* Reachability */;
-				},
-				{
-					ProjectRef = 7C595524A4897D518C87A792F491FC18 /* Realm */;
+					ProjectRef = 7C92A90FBB4B66942E4D7CBCC23C1A02 /* KSAdSDK */;
 				},
 			);
 			projectRoot = "";
@@ -306,36 +306,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05A3BDBA7BF6A49EFF37C8E2BB7A8449 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MEKSAdapter;
-			targetProxy = 9A418EEB29E000BAAAE7DD5421114BD5 /* PBXContainerItemProxy */;
-		};
-		4B52F38D07DF4963CD6A28D8320CB0D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Reachability;
-			targetProxy = AE63A932EDE40AF12DAE7B93647691C6 /* PBXContainerItemProxy */;
-		};
-		5526846D4CC8CED4D6571C15E0E3A52F /* PBXTargetDependency */ = {
+		096841AFADA1A6B7DF54343283BEAA74 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KSAdSDK;
-			targetProxy = 8D301904A64E981E765EF918A8CDFE1C /* PBXContainerItemProxy */;
+			targetProxy = 31C24FFF4C3522983FFB8464A4969461 /* PBXContainerItemProxy */;
 		};
-		560B48F60E9312E69F23EECA2A8223E5 /* PBXTargetDependency */ = {
+		20E1516BF2A8B5EC3C20C6677D531BE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Realm;
+			targetProxy = 0623F4893B9C1F6AA874E04BB55BB1CE /* PBXContainerItemProxy */;
+		};
+		49ED2118E7583CC80E844D683B6E3E4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEAdvSDK;
+			targetProxy = 30C8BDDE77F83519049E8A243FE85883 /* PBXContainerItemProxy */;
+		};
+		4A8DDD78BDF94C1512B5CE4083916C26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MEKSAdapter;
+			targetProxy = B9564AB19A73BA851B519B14AAF5E7AE /* PBXContainerItemProxy */;
+		};
+		852EC1CB49303EB113195C74184DEEC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			targetProxy = BD6515100564E68C1E7958208372B922 /* PBXContainerItemProxy */;
+		};
+		AD7092E47D86F142A32CA2E6495E9F01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MEKSAdapter_Example";
 			target = 89BB5CC50D993C64B2A587BE6B86EAD1 /* Pods-MEKSAdapter_Example */;
-			targetProxy = 2AE9FAC677E4F451EF78784880B7144C /* PBXContainerItemProxy */;
-		};
-		66C27A188FFA7198808091CDF027EEBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MEAdvSDK;
-			targetProxy = 4BF5EC001D57FBC0FBFE9AC0DACB6588 /* PBXContainerItemProxy */;
-		};
-		CEEAA64C2CAF5DF9059D994C412F439F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Realm;
-			targetProxy = D7DECC4642CC43F010ED202F64409C19 /* PBXContainerItemProxy */;
+			targetProxy = C90335227D78837F298EC7F8F672D2CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

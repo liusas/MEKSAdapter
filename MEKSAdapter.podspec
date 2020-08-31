@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MEKSAdapter'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A adapter of kuaishou for mediation SDK'
 
 # This description is used to generate tags and improve search results.
