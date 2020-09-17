@@ -84,7 +84,7 @@
     
     if (self.isTheVideoPlaying == NO && self.rewardedAd.isValid) {
         self.needShow = YES;
-        [self.rewardedAd showAdFromRootViewController:rootVC showScene:@"" type:KSRewardedVideoAdRewardedTypeNormal];
+        [self.rewardedAd showAdFromRootViewController:rootVC];
     }
 }
 
