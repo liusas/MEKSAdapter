@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MEKSAdapter'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'A adapter of kuaishou for mediation SDK'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  
   s.source_files = 'MEKSAdapter/Classes/**/*'
   
   # s.resource_bundles = {
@@ -37,6 +38,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'KSAdSDK', '~> 3.3.2'
-  s.dependency "MEAdvSDK", '~> 1.0.2'
+  s.dependency 'KSAdSDK', '~> 3.3.3'
+  s.dependency "MEAdvSDK", '~> 1.0.4'
 end
