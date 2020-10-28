@@ -80,19 +80,16 @@ typedef NS_ENUM(NSInteger, KSAdapterErrorCode) {
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSString *appid = configuration[kKSAppID];
-            
-            // 快手初始化
-            [KSAdSDKManager setAppId:appid];
-            // 根据需要设置⽇志级别
-            [KSAdSDKManager setLoglevel:KSAdSDKLogLevelOff];
-            
-            if (complete != nil) {
-                complete(nil);
-            }
-        });
+        NSString *appid = configuration[kKSAppID];
+        
+        // 快手初始化
+        [KSAdSDKManager setAppId:appid];
+        // 根据需要设置⽇志级别
+        [KSAdSDKManager setLoglevel:KSAdSDKLogLevelOff];
+        
+        if (complete != nil) {
+            complete(nil);
+        }
     });
 }
 
