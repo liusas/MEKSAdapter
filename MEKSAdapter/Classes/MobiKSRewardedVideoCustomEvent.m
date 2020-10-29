@@ -42,7 +42,7 @@
         return;
     }
     
-    self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:self.posid rewardedVideoModel:[KSRewardedVideoModel new]];
+    self.rewardedAd = [[KSRewardedVideoAd alloc] initWithPosId:adUnitId rewardedVideoModel:[KSRewardedVideoModel new]];
     self.rewardedAd.delegate = self;
     [self.rewardedAd loadAdData];
 }

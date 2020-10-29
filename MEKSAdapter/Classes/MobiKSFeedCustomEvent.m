@@ -99,6 +99,10 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewRenderSuccessForCustomEvent:)]) {
         [self.delegate nativeExpressAdViewRenderSuccessForCustomEvent:feedAd.feedView];
     }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewExposureForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewExposureForCustomEvent:feedAd.feedView];
+    }
 }
 
 - (void)feedAdDidClick:(KSFeedAd *)feedAd {
@@ -110,8 +114,8 @@
 - (void)feedAdDislike:(KSFeedAd *)feedAd {
     [self.expressAdViews removeObject:feedAd.feedView];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewDidClosedCustomEvent:)]) {
-        [self.delegate nativeExpressAdViewDidClosedCustomEvent:feedAd.feedView];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewClosedForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewClosedForCustomEvent:feedAd.feedView];
     }
 }
 
@@ -128,6 +132,9 @@
 - (void)feedAdDidCloseOtherController:(KSFeedAd *)nativeAd interactionType: (KSAdInteractionType)interactionType {
     if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewWillDissmissScreenForCustomEvent:)]) {
         [self.delegate nativeExpressAdViewWillDissmissScreenForCustomEvent:nativeAd.feedView];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(nativeExpressAdViewDidDissmissScreenForCustomEvent:)]) {
+        [self.delegate nativeExpressAdViewDidDissmissScreenForCustomEvent:nativeAd.feedView];
     }
 }
 
