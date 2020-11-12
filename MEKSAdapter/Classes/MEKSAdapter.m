@@ -76,6 +76,10 @@ typedef NS_ENUM(NSInteger, KSAdapterErrorCode) {
     return NSClassFromString(@"MobiKSFullscreenCustomEvent");
 }
 
+- (Class)getDrawViewCustomEvent {
+    return NSClassFromString(@"MobiKSDrawViewCustomEvent");
+}
+
 - (void)initializeNetworkWithConfiguration:(NSDictionary<NSString *,id> *)configuration complete:(void (^)(NSError * _Nullable))complete {
 
     static dispatch_once_t onceToken;
